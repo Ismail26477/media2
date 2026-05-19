@@ -13,12 +13,12 @@ const Hero = memo(() => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll",
-        minHeight: "120vh",
+        minHeight: "100vh",
       }}
     >
       <div className="absolute inset-0 -z-10 bg-black/60" />
 
-      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center w-full gap-8 py-20 sm:py-0" style={{ minHeight: "120vh" }}>
+      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center w-full gap-8" style={{ minHeight: "100vh" }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
