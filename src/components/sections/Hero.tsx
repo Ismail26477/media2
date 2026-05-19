@@ -7,25 +7,24 @@ const Hero = memo(() => {
   return (
     <section
       id="home"
-      className="relative w-full flex items-center justify-center overflow-hidden bg-black"
+      className="relative w-full flex items-center justify-center overflow-hidden bg-black min-h-screen md:min-h-screen"
       style={{
         backgroundImage: "url('/hero-background.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "scroll",
-        minHeight: "100vh",
       }}
     >
       <div className="absolute inset-0 -z-10 bg-black/60" />
 
-      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center w-full gap-8" style={{ minHeight: "100vh" }}>
+      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center w-full gap-6 sm:gap-8 py-32 sm:py-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mb-6 sm:mb-10"
+          className="mb-4 sm:mb-10"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-300 uppercase tracking-[0.4em] font-light letter-spacing">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-300 uppercase tracking-[0.4em] font-light letter-spacing leading-tight">
             Film | Sound | Music
           </h1>
         </motion.div>
