@@ -17,14 +17,14 @@ const Hero = memo(() => {
     >
       <div className="absolute inset-0 -z-10 bg-black/60" />
 
-      <div className="container relative text-center px-6 max-w-5xl">
+      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center min-h-screen gap-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mb-10"
+          className="mb-6 sm:mb-10"
         >
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 uppercase tracking-[0.4em] font-light letter-spacing">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gray-300 uppercase tracking-[0.4em] font-light letter-spacing">
             Film | Sound | Music
           </h1>
         </motion.div>
@@ -37,13 +37,13 @@ const Hero = memo(() => {
         >
           <Link
             to="/work"
-            className="group inline-flex items-center gap-2 px-8 py-3 bg-primary text-black text-xs uppercase tracking-[0.3em] font-semibold hover:bg-opacity-90 transition-all hover:shadow-[0_0_40px_hsl(var(--primary)/0.5)]"
+            className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-primary text-black text-xs uppercase tracking-[0.3em] font-semibold hover:bg-opacity-90 transition-all hover:shadow-[0_0_40px_hsl(var(--primary)/0.5)] whitespace-nowrap"
           >
             View Our Work
           </Link>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white text-xs uppercase tracking-[0.3em] font-semibold hover:border-primary hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 border border-white/20 text-white text-xs uppercase tracking-[0.3em] font-semibold hover:border-primary hover:text-primary transition-colors whitespace-nowrap"
           >
             Get In Touch
           </Link>
