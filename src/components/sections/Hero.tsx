@@ -7,17 +7,18 @@ const Hero = memo(() => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen md:min-h-screen flex items-center justify-center overflow-hidden bg-black"
       style={{
         backgroundImage: "url('/hero-background.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
+        minHeight: "100vh",
       }}
     >
       <div className="absolute inset-0 -z-10 bg-black/60" />
 
-      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center min-h-screen gap-8">
+      <div className="container relative text-center px-4 sm:px-6 max-w-5xl mx-auto flex flex-col justify-center w-full gap-8" style={{ minHeight: "100vh" }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
