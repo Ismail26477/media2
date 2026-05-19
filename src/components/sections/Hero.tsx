@@ -7,60 +7,127 @@ const Hero = memo(() => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
-      style={{
-        backgroundImage: "url('/hero-background.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      className="relative w-full h-screen overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10 bg-black/60" />
+      {/* Background Image */}
+      <div
+        className="
+          absolute
+          -top-10
+          left-0
+          w-full
+          h-[115%]
+          bg-cover
+          bg-top
+          md:bg-center
+          bg-no-repeat
+          scale-150
+          md:scale-100
+        "
+        style={{
+          backgroundImage: "url('/hero-background.jpg')",
+        }}
+      />
 
-      <div className="container relative text-center px-6 max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Hero Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4 text-center">
+        
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="mb-10"
+          transition={{ duration: 1 }}
+          className="
+            text-white
+            uppercase
+            font-light
+            tracking-[0.35em]
+            text-xl
+            sm:text-3xl
+            md:text-5xl
+            mt-[-40px]
+          "
         >
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 uppercase tracking-[0.4em] font-light letter-spacing">
-            Film | Sound | Music
-          </h1>
-        </motion.div>
+          Film | Sound | Music
+        </motion.h1>
 
+        {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          transition={{ duration: 1, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-4 mt-10"
         >
           <Link
             to="/work"
-            className="group inline-flex items-center gap-2 px-8 py-3 bg-primary text-black text-xs uppercase tracking-[0.3em] font-semibold hover:bg-opacity-90 transition-all hover:shadow-[0_0_40px_hsl(var(--primary)/0.5)]"
+            className="
+              bg-[#d88345]
+              text-black
+              uppercase
+              tracking-[0.25em]
+              text-[11px]
+              font-semibold
+              px-8
+              py-3
+              hover:opacity-90
+              transition
+            "
           >
             View Our Work
           </Link>
+
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 border border-white/20 text-white text-xs uppercase tracking-[0.3em] font-semibold hover:border-primary hover:text-primary transition-colors"
+            className="
+              border
+              border-white
+              text-white
+              uppercase
+              tracking-[0.25em]
+              text-[11px]
+              font-semibold
+              px-8
+              py-3
+              hover:bg-white
+              hover:text-black
+              transition
+            "
           >
             Get In Touch
           </Link>
         </motion.div>
-      </div>
 
-      <Link
-        to="/about"
-        aria-label="Go to about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary"
-      >
-        <span className="text-[10px] uppercase tracking-[0.4em]">Explore</span>
-        <ArrowDown size={16} className="animate-scroll-bounce" />
-      </Link>
+        {/* Explore */}
+        <Link
+          to="/about"
+          className="
+            absolute
+            bottom-8
+            left-1/2
+            -translate-x-1/2
+            flex
+            flex-col
+            items-center
+            text-[#d88345]
+          "
+        >
+          <span className="text-[10px] uppercase tracking-[0.4em] mb-2">
+            Explore
+          </span>
+
+          <ArrowDown
+            size={14}
+            className="animate-bounce"
+          />
+        </Link>
+      </div>
     </section>
   );
 });
 
 Hero.displayName = "Hero";
+
 export default Hero;
